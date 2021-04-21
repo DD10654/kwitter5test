@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lets Chat</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+</head>
+<body onload="username()"> 
+
+<div class="container-fluid mt-3">
+
+<!--Username and Logout Button-->
+<div class="d-flex p-3 bg-secondary">
+    <div class="p-2 bg-primary">Lets Chat</div>
+    <div class="p-2 bg-success" id="username_logged_in"></div>
+    <div class="p-2 bg-danger" onclick="logout()"><button class="bg-danger" style="border-width: 0px;">Log Out</button></div>
+</div>
+<br>
+<!--Text Input To Make A Room-->
+<div class="d-flex p-3 bg-secondary text-white">
+  <div class="p-2 bg-warning">Room Name: &nbsp; &nbsp;<input type="text" class="btn-info" style="border-width: 0px;" id="roomname"> 
+    &nbsp; &nbsp; <button class="bg-light" style="border-width: 0px;" onclick="addRoom()">Create!</button></div>
+</div>
+<br>
+<br>
+
+<div class="list-group" id="roomListNames">
+
+</div>
+
+</div>
+<script src="main.js"></script>
+</body>
+</html>

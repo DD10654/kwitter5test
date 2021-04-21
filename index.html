@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Lets Chat</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+</head>
+<body>
+    <div class="container-fluid index">
+        <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+            <h1 style="color: #4ef59c; display: inline-block; font-size: 1px;">Kwitter</h1>
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <h1 id="title">Lets Chat</h1>
+                <img src="THE CUTY BIRD.png" width="65px" height="70px">
+            </h1>
+            <div id="fill_in">
+                <center>
+		            <h3 >See what is happening in the world right now</h3>
+                    <br>
+		            <h4 >Join Lets Chat today</h4>
+                    <br>
+		            <div class="form-group">
+		                <label >User Name:</label>
+                        <br>
+			            <input type="text" id="username" class="form-control" placeholder="Username">
+		            </div>
+                    <br>    
+		            <button id="login_button" class="btn btn-primary" onclick="addUser()">Login</button>
+                </center>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

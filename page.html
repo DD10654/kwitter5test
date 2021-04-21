@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lets Chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+</head>
+<body onload="username2()">
+    <!--Username and Logout Button-->
+    <div class="d-flex p-3 bg-secondary">
+        <div class="p-2 bg-primary">Lets Chat</div>
+        <div class="p-2 bg-success" id="username_logged_in2"></div>
+        <div class="p-2 bg-danger" onclick="logout()">
+            <button class="bg-danger" style="border-width: 0px;">Log Out</button>
+        </div>
+    </div>
+    <!--Chat-->
+    <div class="card" id="output">
+        <ul id="output">
+            <li class="card-header">Hello! This is The System! Have a Nice Day in The Chat Room!  <span class="badge badge-info">System</span></li>
+        </ul>
+
+    </div>
+
+    <form>
+        <div class="input-group mb-3 input-group-lg">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Type Your Message</span>
+          </div>
+          <input type="text" class="form-control" id="msg_input">
+          <button type="button" class="btn btn-dark active" style="width: 100px; margin-left: 10px; margin-right: 10px;" onclick="send()">
+            Send</button>
+        </div>
+    </form>   
+
+    <script src="page.js"></script>
+</body>
+</html>

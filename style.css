@@ -1,0 +1,39 @@
+.index {
+    background-image: linear-gradient(to bottom right, #4ef59c, #eb4034);
+}
+
+#fill_in {
+    background-image: linear-gradient(to bottom right, #4eaff5, #e014ff);
+    height: 500px;
+    border-radius: 50px;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 360px;
+    border-style: ridge;
+    border-width: 20px;
+}
+
+#title {
+    font-family: 'Cute Font', cursive;
+    font-size: 95px;
+    font-weight: bolder;
+}
+
+.login_div
+{
+	background: rgba(255,255,255,0.8);
+    float: none;
+    border-radius: 15px;
+}
+
+#login_button
+{
+	width: 80%;border-radius: 15px;
+}
+
+.card-header {
+    list-style: none;
+    width: 100%;
+    background-color: white;
+    
+}
