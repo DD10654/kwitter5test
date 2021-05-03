@@ -61,7 +61,7 @@ function getData() { firebase.database().ref("/"+room_name).on('value', function
         });
     }
 
-    function updateLike(msg_id) {
+    function updateDislike(msg_id) {
         console.log("The Dislike Button is pressed! The Message Id Is : " + msg_id);
         button_id = msg_id;
         dislikes = document.getElementById(button_id).value;
