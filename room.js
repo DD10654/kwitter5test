@@ -20,20 +20,21 @@ username_2 = localStorage.getItem("username");
     
 
 function addRoom() {
-        localStorage.setItem("room_name", document.getElementById("roomname").value);
-        firebase.database().ref("/").child(roomname).update({
-            roomname: document.getElementById("roomname").value
+        room = document.getElementById("roomname").value;
+        localStorage.setItem("room_name", room);
+        firebase.database().ref("/").child(room).update({
+            purpose: "adding a room"
       });
       window.location.replace("page.html");
 }
 
 function getData() {firebase.database().ref("/").on('value',
-function(snapshot) {document.getElementById("output").innerHTML =
+function(snapshot) {document.getElementById("roomListNames").innerHTML =
 "";snapshot.forEach(function(childSnapshot) {childKey =
 childSnapshot.key;
  Room_names = childKey;
  //Start code
-    row = "<div onclick='redirect(this.id)' id='" + Room_names + "'> # " + Room_names + "</div>";
+    row = "<li class='row' onclick='redirect(this.id)' id='" + Room_names + "'> # " + Room_names + "</li>";
     document.getElementById("roomListNames").innerHTML += row;
  //End code
  });});}

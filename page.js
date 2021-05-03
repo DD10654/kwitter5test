@@ -10,6 +10,13 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+room__name = localStorage.getItem("room_name")
+
+function username() {
+    username_3 = localStorage.getItem("username");
+        document.getElementById('username_logged_in').innerHTML = username_3;
+    }
+
 function getData() { firebase.database().ref("/"+room_name).on('value', function(snapshot) { document.getElementById("output").innerHTML = ""; snapshot.forEach(
     function(childSnapshot) { 
         childKey = childSnapshot.key; childData = childSnapshot.val(); 
@@ -21,10 +28,8 @@ function getData() { firebase.database().ref("/"+room_name).on('value', function
         name2 = message_data['name'];
         msg = message_data['msg'];
         like = message_data['like'];
-        dislike = message_data['dislike'];
-        name_msg_with_tag = "<h4>" + msg +  "<h4>Example heading <span class='badge badge-success'>" + name2 + "</span></h4>";
-        like_with_button = "<div class='btn btn-warning'> <button class='btn btn-warning' id='" + firebase_message_id + "' value='" + like + "' onclick='updateLike(this.id)'></button";
-        dislike_with_button = "<button class='btn btn-warning' id='" + firebase_message_id + "' value='" + dislike + "' onclick='updateDislike(this.id)'><button></div>";
+
+        row = "<h4> "+ name2 + "class='message_h4'>"+ msg +"</h4><button class='btn btn-warning' id='"+firebase_message_id+"' value='"+like+"' onclick='updateLike(this.id)'> class='glyphicon glyphicon-thumbs-up'>Like: "+ like +"</span></button><hr>";
         
         row = "<div class='card-header'></div>" + name_msg_with_tag + like_with_button + dislike_with_button + "</div>";
         document.getElementById("output").innerHTML += row;
@@ -41,11 +46,12 @@ function getData() { firebase.database().ref("/"+room_name).on('value', function
     
     function send() {
         msg = document.getElementById("msg_input").value
-        firebase.database().ref(localStorage.getItem("room_name")).push({
+
+        firebase.database().ref(room__name).push({
             name:localStorage.getItem("username"),
             msg: msg,
             like:0,
-            dislike:0
+
         });
     }
 
@@ -56,19 +62,7 @@ function getData() { firebase.database().ref("/"+room_name).on('value', function
         likes_updated = Number(likes) + 1;
         console.log("The updated Likes are " + likes_updated);
     
-        firebase.database().ref(localStorage.getItem("room_name")).child(msg_id).update({
+        firebase.database().ref(room__name).child(msg_id).update({
             like : likes_updated
-        });
-    }
-
-    function updateDislike(msg_id) {
-        console.log("The Dislike Button is pressed! The Message Id Is : " + msg_id);
-        button_id = msg_id;
-        dislikes = document.getElementById(button_id).value;
-        dislikes_updated = Number(likes) + 1;
-        console.log("The updated Likes are " + likes_updated);
-    
-        firebase.database().ref(localStorage.getItem("room_name")).child(msg_id).update({
-            dislike : dislikes_updated
         });
     }
